@@ -3,7 +3,6 @@ package com.ziguiway.adventurechat;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.ziguiway.adventurechat.utils.HttpClientUtil;
-import com.ziguiway.adventurechat.utils.IpAddressUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,9 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class AdventureChatApplicationTests {
 
 
-
     @Test
-    void ipTest(){
+    void ipTest() {
         String res = HttpClientUtil.doGet("https://api.vvhan.com/api/getIpInfo?ip=127.0.0.1");
         JSONObject parseObject = JSON.parseObject(res);
         Object info = parseObject.get("info");
@@ -23,9 +21,9 @@ class AdventureChatApplicationTests {
         System.out.println(jsonObject);
         Object country = jsonObject.get("country");
         System.out.println(country);
-        Object prov =  jsonObject.get("prov");
-        Object lsp =  jsonObject.get("lsp");
-        Object postcode =  jsonObject.get("postcode");
+        Object prov = jsonObject.get("prov");
+        Object lsp = jsonObject.get("lsp");
+        Object postcode = jsonObject.get("postcode");
         System.out.println(prov);
         System.out.println(lsp);
         System.out.println(postcode);

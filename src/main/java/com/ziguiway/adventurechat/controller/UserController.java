@@ -50,6 +50,7 @@ public class UserController {
 
     /**
      * 注册
+     *
      * @param user
      * @param request
      * @return
@@ -59,14 +60,14 @@ public class UserController {
         String email = user.getEmail();
         String password = user.getPassword();
         String passwordMD5 = DigestUtils.md5DigestAsHex(password.getBytes());
-        if (checkUserExists(email,password)) {
+        if (checkUserExists(email, password)) {
             return ResultVo.error("用户已存在", ResultCode.FAILED);
         }
         String ipAddress = IpAddressUtil.getIpAddress(request);
         user.setIp(ipAddress);
         String address = IpAddressUtil.getAddress(ipAddress);
         user.setAddress(address);
-        user.setPassword(passwordMD5+slot);
+        user.setPassword(passwordMD5 + slot);
         userService.save(user);
         return ResultVo.success("注册成功");
     }

@@ -1,9 +1,6 @@
 package com.ziguiway.adventurechat.utils;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpHost;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -25,7 +22,8 @@ import java.util.Map;
 public class HttpClientUtil {
     /**
      * 发送get请求
-     * @param url 请求URL
+     *
+     * @param url   请求URL
      * @param param 请求参数 key:value url携带参数 或者无参可不填
      * @return
      */
@@ -49,8 +47,8 @@ public class HttpClientUtil {
 
             // 创建http GET请求
             HttpGet httpGet = new HttpGet(uri);
-            httpGet.addHeader("user-agent","Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Mobile Safari/537.36");
-            httpGet.addHeader("Content-Type","application/json");
+            httpGet.addHeader("user-agent", "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Mobile Safari/537.36");
+            httpGet.addHeader("Content-Type", "application/json");
             // 执行请求
             response = httpclient.execute(httpGet);
             // 判断返回状态是否为200
@@ -78,7 +76,8 @@ public class HttpClientUtil {
 
     /**
      * 发送post请求
-     * @param url 请求URL
+     *
+     * @param url   请求URL
      * @param param 请求参数 key:value
      * @return
      */
@@ -120,7 +119,8 @@ public class HttpClientUtil {
 
     /**
      * 发送post 请求
-     * @param url 请求地址
+     *
+     * @param url  请求地址
      * @param json 请求参数
      * @return
      */

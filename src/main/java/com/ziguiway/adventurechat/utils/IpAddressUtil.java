@@ -6,8 +6,6 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 
 public class IpAddressUtil {
 
@@ -61,16 +59,16 @@ public class IpAddressUtil {
     public static String getAddress(String ip) {
         //ip查询接口
         String ipApi = "https://api.vvhan.com/api/getIpInfo";
-        String url  = ipApi+"?"+ip;
+        String url = ipApi + "?" + ip;
         String res = HttpClientUtil.doGet(url);
         try {
             JSONObject parseObject = JSON.parseObject(res);
             Object info = parseObject.get("info");
             JSONObject jsonObject = JSON.parseObject(info.toString());
             Object country = jsonObject.get("country");
-            Object prov =  jsonObject.get("prov");
-            Object lsp =  jsonObject.get("lsp");
-            Object postcode =  jsonObject.get("postcode");
+            Object prov = jsonObject.get("prov");
+            Object lsp = jsonObject.get("lsp");
+            Object postcode = jsonObject.get("postcode");
             return country + "-" + prov + "-" + lsp + "-" + postcode;
         } catch (JSONException e) {
             return "未知ip";
