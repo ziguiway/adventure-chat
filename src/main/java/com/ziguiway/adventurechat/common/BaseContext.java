@@ -1,4 +1,4 @@
-package com.ziguiway.adventurechat.comon;
+package com.ziguiway.adventurechat.common;
 
 /**
  * Created with IntelliJ IDEA.

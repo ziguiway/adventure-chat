@@ -2,7 +2,7 @@ package com.ziguiway.adventurechat.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.ziguiway.adventurechat.bean.vo.ResultVo;
-import com.ziguiway.adventurechat.comon.ResultCode;
+import com.ziguiway.adventurechat.common.ResultCode;
 import com.ziguiway.adventurechat.domain.User;
 import com.ziguiway.adventurechat.service.UserService;
 import com.ziguiway.adventurechat.utils.IpAddressUtil;

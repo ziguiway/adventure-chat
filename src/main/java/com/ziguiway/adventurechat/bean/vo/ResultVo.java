@@ -1,6 +1,6 @@
 package com.ziguiway.adventurechat.bean.vo;
 
-import com.ziguiway.adventurechat.comon.ResultCode;
+import com.ziguiway.adventurechat.common.ResultCode;
 import lombok.Data;
 
 import java.util.HashMap;
